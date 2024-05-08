@@ -23,6 +23,10 @@
 <script src="https://crm.futabus.vn/assets/common.94a0970b.js"></script>
 <script src="https://crm.futabus.vn/assets/48.a79c9f44.js"></script>
 <style>
+	@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+	body {
+		font-family: "Roboto", sans-serif;
+	}
 	.input-info input {
 		width: 100%;
 		padding: 8px 11px;
@@ -66,10 +70,7 @@
 <div id="admin_core">
 	<div class="template">
 		<div class="container-img">
-			<img
-				src="https://res.cloudinary.com/dnasp7ghs/image/upload/v1715067111/lxammr9dznet0zlygdse.jpg"
-				width="100%"
-				alt="" />
+			<img src="./img/banner-ngang.jpeg" width="100%" alt="" />
 		</div>
 		<div class="container">
 			<img src="" alt="" class="busline-image" />
@@ -336,12 +337,17 @@
 				<div class="submit-button">
 					<button
 						type="submit"
-						class="ant-btn ant-btn-round ant-btn-default submit-btn"
-						disabled="">
+						class="ant-btn ant-btn-round ant-btn-default submit-btn">
 						<span>Gửi đánh giá</span>
 					</button>
 				</div>
 			</form>
+		</div>
+		<div class="container-img">
+			<img
+				src="https://res.cloudinary.com/dnasp7ghs/image/upload/v1715067111/lxammr9dznet0zlygdse.jpg"
+				width="100%"
+				alt="" />
 		</div>
 	</div>
 </div>
@@ -396,41 +402,40 @@
 					selectedIssues.splice(index, 1);
 				}
 			}
-			checkSubmitButton();
+			// checkSubmitButton();
 		});
 	});
 
-	function checkSubmitButton() {
-		const nameInput = document.querySelector(
-			"input[placeholder='Nhập họ và tên']"
-		);
-		const phoneInput = document.querySelector(
-			"input[placeholder='Nhập số điện thoại']"
-		);
-		const reviewInput = document.querySelector(
-			"textarea[placeholder='Nhập nội dung đánh giá']"
-		);
-		const submitButton = document.querySelector(".submit-btn");
+	// function checkSubmitButton() {
+	// 	const nameInput = document.querySelector(
+	// 		"input[placeholder='Nhập họ và tên']"
+	// 	);
+	// 	const phoneInput = document.querySelector(
+	// 		"input[placeholder='Nhập số điện thoại']"
+	// 	);
+	// 	const reviewInput = document.querySelector(
+	// 		"textarea[placeholder='Nhập nội dung đánh giá']"
+	// 	);
+	// 	const submitButton = document.querySelector(".submit-btn");
+	// 	const isNameFilled = nameInput.value.trim() !== "";
+	// 	const isPhoneFilled = phoneInput.value.trim() !== "";
+	// 	const isReviewFilled = reviewInput.value.trim() !== "";
+	// 	const isStarSelected =
+	// 		document.querySelector(".ant-rate-star.active") !== null;
+	// 	const isIssueSelected = selectedIssues.length > 0;
 
-		const isNameFilled = nameInput.value.trim() !== "";
-		const isPhoneFilled = phoneInput.value.trim() !== "";
-		const isReviewFilled = reviewInput.value.trim() !== "";
-		const isStarSelected =
-			document.querySelector(".ant-rate-star.active") !== null;
-		const isIssueSelected = selectedIssues.length > 0;
-
-		if (
-			isNameFilled ||
-			isPhoneFilled ||
-			isReviewFilled ||
-			isStarSelected ||
-			isIssueSelected
-		) {
-			submitButton.removeAttribute("disabled");
-		} else {
-			submitButton.setAttribute("disabled", "disabled");
-		}
-	}
+	// 	if (
+	// 		isNameFilled ||
+	// 		isPhoneFilled ||
+	// 		isReviewFilled ||
+	// 		isStarSelected ||
+	// 		isIssueSelected
+	// 	) {
+	// 		submitButton.removeAttribute("disabled");
+	// 	} else {
+	// 		submitButton.setAttribute("disabled", "disabled");
+	// 	}
+	// }
 
 	// Event listener for submit button
 	const submitButton = document.querySelector(".submit-btn");
@@ -451,39 +456,34 @@
 			.value.trim();
 		const stars = document.querySelectorAll(".ant-rate-star.active").length;
 
-		if (name && phone && review && stars > 0 && selectedIssues.length > 0) {
-			const url =
-				"https://script.google.com/macros/s/AKfycby0kepXtnogwnS6P3MS6REbM-RyV2l7dvH8aiOvFbf8d3Sw9bgNmQEZGer7JwtHZb_f/exec";
-			const formData = new FormData();
-			formData.append("name", name);
-			formData.append("phone", phone);
-			formData.append("review", review);
-			formData.append("stars", stars);
-			formData.append("issues", selectedIssues.join(","));
+		const url =
+			"https://script.google.com/macros/s/AKfycby0kepXtnogwnS6P3MS6REbM-RyV2l7dvH8aiOvFbf8d3Sw9bgNmQEZGer7JwtHZb_f/exec";
+		const formData = new FormData();
+		formData.append("name", name);
+		formData.append("phone", phone);
+		formData.append("review", review);
+		formData.append("stars", stars);
+		formData.append("issues", selectedIssues.join(","));
 
-			// Gửi dữ liệu lên máy chủ
-			fetch(url, {
-				method: "POST",
-				body: formData,
-			}).then(() => {
-				// Reset form
-				document.querySelector("form").reset();
-				// Xóa các lớp active
-				stars.forEach((star) => star.classList.remove("active"));
-				issueItems.forEach((item) => item.classList.remove("active-cate"));
-				// Xóa mảng selectedIssues
-				selectedIssues = [];
-				// Vô hiệu hóa nút gửi sau khi gửi
-				submitButton.setAttribute("disabled", "");
-			});
-			// Chuyển hướng sau 1 giây
-			setTimeout(() => {
-				window.location.href =
-					"https://www.amazinglimousine.vn/cam-on-danh-gia/";
-			}, 500);
-		} else {
-			alert("Vui lòng điền đầy đủ thông tin trước khi gửi đánh giá!");
-		}
+		// Gửi dữ liệu lên máy chủ
+		fetch(url, {
+			method: "POST",
+			body: formData,
+		}).then(() => {
+			// Reset form
+			document.querySelector("form").reset();
+			// Xóa các lớp active
+			stars.forEach((star) => star.classList.remove("active"));
+			issueItems.forEach((item) => item.classList.remove("active-cate"));
+			// Xóa mảng selectedIssues
+			selectedIssues = [];
+			// Vô hiệu hóa nút gửi sau khi gửi
+			submitButton.setAttribute("disabled", "");
+		});
+		// Chuyển hướng sau 1 giây
+		setTimeout(() => {
+			window.location.href = "https://www.amazinglimousine.vn/cam-on-danh-gia/";
+		}, 500);
 	}
 
 	const logo =
