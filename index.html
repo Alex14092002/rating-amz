@@ -1,561 +1,569 @@
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Đánh giá limousine</title>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Đánh giá limousine</title>
 
-<link
-	rel="shortcut icon"
-	href="https://www.amazinglimousine.vn/wp-content/uploads/2023/08/cropped-cropped-AMZBN.png"
-	type="image/x-icon" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous" />
-<!-- <script src="https://crm.futabus.vn/assets/common.94a0970b.js"></script>
-<script src="https://crm.futabus.vn/assets/48.a79c9f44.js"></script> -->
-<style>
-	@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-	body {
-		font-family: "Roboto", sans-serif;
-	}
-	.input-info input,
-	.ant-input {
-		width: 100%;
-		padding: 8px 11px;
-		border: none;
-		border-radius: 8px;
-		border: 1px solid #d9d9d9;
-	}
-	.input-info input::placeholder,
-	.ant-input::placeholder {
-		color: #bfbfbf;
-	}
-	/* Khi hover hoặc click vào ngôi sao */
-	/* Thiết lập CSS cho ngôi sao khi được active */
-	.ant-rate-star.active .ant-rate-star-first,
-	.ant-rate-star.active .ant-rate-star-second {
-		width: 100%;
-		opacity: 1;
-	}
-	.active-cate {
-		border: 2px solid #2e8cf7 !important;
-	}
-	.bad {
-		display: none;
-	}
-	.sussess {
-		display: none;
-	}
-	body {
-		overflow-x: hidden !important;
-	}
-	.template {
-		padding-top: 0 !important;
-		padding-bottom: 0;
-	}
-
-	.justify-center {
-		justify-content: space-between;
-		align-items: center;
-	}
-	.font-bold {
-		font-weight: bold;
-	}
-	@media screen and (max-width: 767px) {
-		.template .container .busline-image {
-			width: 100%;
-			margin-top: 0px;
-		}
-	}
-	#admin_core {
-		display: flex;
-		justify-content: center;
-	}
-	.template {
-		max-width: 600px;
-	}
-	.rate-text {
-		text-align: center;
-		font-size: 20px;
-		font-weight: bold;
-		padding-bottom: 1rem;
-	}
-	.ant-rate {
-		list-style: none;
-		padding-left: 0;
-		display: flex;
-		justify-content: space-evenly;
-	}
-
-	.submit-button {
-		padding: 20px 0;
-		display: flex;
-		justify-content: center;
-	}
-	.submit-button button {
-		border: none;
-		padding: 10px 24px;
-		background-color: #3a4b7d;
-		color: #fff;
-		border-radius: 20px;
-	}
-	.issue-container {
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-	/* Thay đổi màu nền và màu chữ khi danh mục được chọn */
-	.active-cate {
-		background-color: #2e8cf7;
-		color: white;
-	}
-
-	/* Hiển thị border khi hover vào danh mục */
-	.inactive-issue:hover {
-		border: 1px solid #2e8cf7;
-		cursor: pointer;
-	}
-
-	/* Padding và margin cho các danh mục */
-	.inactive-issue {
-		padding: 5px 10px;
-		margin: 5px;
-		border: 1px solid transparent;
-		border-radius: 5px;
-	}
-	.info-text {
-		padding: 20px 0;
-	}
-	.ant-rate-star-first {
-		display: none;
-	}
-	.ant-rate-star .ant-rate-star-zero {
-		cursor: pointer;
-	}
-</style>
-
-<div id="admin_core">
-	<div class="template">
-		<div class="container-img">
-			<img src="./img/Cover web.jpg" width="100%" alt="" />
-		</div>
-		<div class="container">
-			<div class="d-flex justify-content-between py-3">
-				<div>
-					<img
-						height="100px"
-						src="./img//logo-amz.png"
-						alt=""
-						class="busline-image" />
-				</div>
-				<div>
-					<img
-						src="./img/logo-tqd.png"
-						alt=""
-						class="busline-image"
-						height="100px" />
-				</div>
-			</div>
-			<div class="heading-2">
-				<div class="margin-bottom-cus text-center py-3">
-					<span class="font-bold">Amazing Tân Quang Dũng</span> chân thành cảm
-					ơn Quý Khách đã sử dụng dịch vụ của
-					<span class="font-bold">Amazing Tân Quang Dũng</span> trên hành
-					trình<b> Sài Gòn - Đà Lạt</b> và
-					<b> Ngược lại</b>
-				</div>
-				<div class="margin-cus text-center pb-3">
-					Chúng tôi rất mong nhận được ý kiến đánh giá từ Quý Khách để cải thiện
-					và nâng cao chất lượng dịch vụ.
-				</div>
-			</div>
-			<form class="ant-form ant-form-vertical support_image">
-				<div class="rate-container">
-					<div class="rate-text">Đánh giá dịch vụ</div>
-					<div class="ant-form-item ant-form-item-with-help">
-						<div class="ant-row ant-form-item-row">
-							<div class="ant-col ant-form-item-control">
-								<div class="ant-form-item-control-input">
-									<div class="ant-form-item-control-input-content">
-										<ul
-											class="ant-rate undefined"
-											tabindex="0"
-											role="radiogroup">
-											<li class="ant-rate-star ant-rate-star-zero">
-												<div
-													role="radio"
-													aria-checked="false"
-													aria-posinset="1"
-													aria-setsize="5"
-													tabindex="0">
-													<div class="ant-rate-star-first">
-														<span><img width="60px" class="star" /></span>
-													</div>
-													<div class="ant-rate-star-second">
-														<span><img width="60px" class="star" /></span>
-													</div>
-												</div>
-											</li>
-											<li class="ant-rate-star ant-rate-star-zero">
-												<div
-													role="radio"
-													aria-checked="false"
-													aria-posinset="2"
-													aria-setsize="5"
-													tabindex="0">
-													<div class="ant-rate-star-first">
-														<span><img width="60px" class="star" /></span>
-													</div>
-													<div class="ant-rate-star-second">
-														<span><img width="60px" class="star" /></span>
-													</div>
-												</div>
-											</li>
-											<li class="ant-rate-star ant-rate-star-zero">
-												<div
-													role="radio"
-													aria-checked="false"
-													aria-posinset="3"
-													aria-setsize="5"
-													tabindex="0">
-													<div class="ant-rate-star-first">
-														<span><img width="60px" class="star" /></span>
-													</div>
-													<div class="ant-rate-star-second">
-														<span><img width="60px" class="star" /></span>
-													</div>
-												</div>
-											</li>
-											<li class="ant-rate-star ant-rate-star-zero">
-												<div
-													role="radio"
-													aria-checked="false"
-													aria-posinset="4"
-													aria-setsize="5"
-													tabindex="0">
-													<div class="ant-rate-star-first">
-														<span><img width="60px" class="star" /></span>
-													</div>
-													<div class="ant-rate-star-second">
-														<span><img width="60px" class="star" /></span>
-													</div>
-												</div>
-											</li>
-											<li class="ant-rate-star ant-rate-star-zero">
-												<div
-													role="radio"
-													aria-checked="false"
-													aria-posinset="5"
-													aria-setsize="5"
-													tabindex="0">
-													<div class="ant-rate-star-first">
-														<span><img width="60px" class="star" /></span>
-													</div>
-													<div class="ant-rate-star-second">
-														<span><img width="60px" class="star" /></span>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<div style="display: flex; flex-wrap: nowrap">
-									<div
-										class="ant-form-item-explain ant-form-item-explain-connected"
-										role="alert">
-										<div class="" style="">
-											<span
-												class="ant-typography"
-												style="color: rgb(255, 77, 79)"></span>
-										</div>
-									</div>
-									<div style="width: 0px; height: 24px"></div>
-								</div>
-							</div>
-						</div>
-						<div
-							class="ant-form-item-margin-offset"
-							style="margin-bottom: -24px"></div>
-					</div>
-				</div>
-				<div class="sussess">
-					<div class="line"></div>
-					<div class="info-text text-center font-bold">
-						Quý khách cảm thấy hài lòng!
-					</div>
-					<div class="issue-container">
-						<span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Chất lượng xe</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Nhà chờ</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Quầy vé</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Tài xế</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Tiếp viên</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Tổng đài</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Trạm dừng</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Trung chuyển</span
-						>
-					</div>
-					<div class="error-issue"></div>
-				</div>
-				<div class="bad">
-					<div class="line"></div>
-					<div class="info-text text-center font-bold">
-						Quý khách mong muốn cải thiện điều gì?
-					</div>
-					<div class="issue-container">
-						<span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Chất lượng xe</span
-						><span
-							class="inactive-issue active"
-							style="background: rgb(241, 241, 241); color: black"
-							>Nhà chờ</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Quầy vé</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Tài xế</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Tiếp viên</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Tổng đài</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Trạm dừng</span
-						><span
-							class="inactive-issue"
-							style="background: rgb(241, 241, 241); color: black"
-							>Trung chuyển</span
-						>
-					</div>
-					<div class="error-issue"></div>
-				</div>
-				<div class="ant-form-item ant-form-item-with-help">
-					<div class="ant-row ant-form-item-row">
-						<div class="ant-col ant-form-item-control">
-							<div class="ant-form-item-control-input">
-								<div class="ant-form-item-control-input-content">
-									<div class="input-info">
-										<input type="text" placeholder="Nhập họ và tên" />
-									</div>
-									<br />
-									<div class="input-info">
-										<input type="text" placeholder="Nhập số điện thoại" />
-									</div>
-									<br />
-									<div class="float-label">
-										<span
-											class="ant-input-affix-wrapper ant-input-affix-wrapper-textarea-with-clear-btn">
-											<textarea
-												rows="4"
-												placeholder="Nhập nội dung đánh giá"
-												class="ant-input undefined"></textarea>
-											<span
-												role="button"
-												aria-label="close-circle"
-												tabindex="-1"
-												class="anticon anticon-close-circle ant-input-clear-icon-hidden ant-input-clear-icon"></span
-										></span>
-									</div>
-								</div>
-							</div>
-							<div style="display: flex; flex-wrap: nowrap">
-								<div
-									class="ant-form-item-explain ant-form-item-explain-connected"
-									role="alert">
-									<div class="" style="">
-										<span
-											class="ant-typography"
-											style="color: rgb(255, 77, 79); font-size: 10px"
-											><i></i
-										></span>
-									</div>
-								</div>
-								<div style="width: 0px; height: 24px"></div>
-							</div>
-						</div>
-					</div>
-					<div
-						class="ant-form-item-margin-offset"
-						style="margin-bottom: -24px"></div>
-				</div>
-				<div class="submit-button">
-					<button
-						type="submit"
-						class="ant-btn ant-btn-round ant-btn-default submit-btn">
-						<span>Gửi đánh giá</span>
-					</button>
-				</div>
-			</form>
-		</div>
-		<div class="container-img">
-			<img src="./img/Web Phone.png" width="100%" alt="" />
-		</div>
-	</div>
-</div>
-
-<script>
-	// Đường dẫn tới hình ảnh ngôi sao mặc định và ngôi sao đã chọn
-	const starDefault =
-		"https://crm.futabus.vn/static/images/star_default.c2ef332a.svg";
-	const starChecked = "https://crm.futabus.vn/static/images/star.ddec0040.svg";
-
-	// Lấy tất cả các ngôi sao đánh giá
-	const stars = document.querySelectorAll(".ant-rate-star");
-
-	// Lặp qua từng ngôi sao và thêm sự kiện click
-	stars.forEach((star, index) => {
-		star.addEventListener("click", () => {
-			// Loại bỏ lớp active từ tất cả các ngôi sao có index lớn hơn index của ngôi sao được chọn
-			for (let i = index + 1; i < stars.length; i++) {
-				stars[i].classList.remove("active");
-				stars[i].querySelector(".ant-rate-star-second span img").src =
-					starDefault;
-				stars[i].querySelector(".ant-rate-star-first span img").src =
-					starChecked;
+		<link
+			rel="shortcut icon"
+			href="https://www.amazinglimousine.vn/wp-content/uploads/2023/08/cropped-cropped-AMZBN.png"
+			type="image/x-icon" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous" />
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+			body {
+				font-family: "Roboto", sans-serif;
 			}
-			// Thêm lớp active cho ngôi sao được chọn và các ngôi sao trước đó
-			for (let i = 0; i <= index; i++) {
-				stars[i].classList.add("active");
-				stars[i].querySelector(".ant-rate-star-second span img").src =
-					starChecked;
-				stars[i].querySelector(".ant-rate-star-first span img").src =
-					starChecked;
+			.input-info input,
+			.ant-input {
+				width: 100%;
+				padding: 8px 11px;
+				border: none;
+				border-radius: 8px;
+				border: 1px solid #d9d9d9;
 			}
-			console.log(index + 1);
-			if (index + 1 <= 3) {
-				document.querySelector(".bad").style.display = "block";
-				document.querySelector(".sussess").style.display = "none";
-			} else {
-				document.querySelector(".sussess").style.display = "block";
-				document.querySelector(".bad").style.display = "none";
+			.input-info input::placeholder,
+			.ant-input::placeholder {
+				color: #bfbfbf;
 			}
-		});
-	});
+			/* Khi hover hoặc click vào ngôi sao */
+			/* Thiết lập CSS cho ngôi sao khi được active */
+			.ant-rate-star.active .ant-rate-star-first,
+			.ant-rate-star.active .ant-rate-star-second {
+				width: 100%;
+				opacity: 1;
+			}
+			.active-cate {
+				border: 2px solid #2e8cf7 !important;
+			}
+			.bad {
+				display: none;
+			}
+			.sussess {
+				display: none;
+			}
+			body {
+				overflow-x: hidden !important;
+			}
+			.template {
+				padding-top: 0 !important;
+				padding-bottom: 0;
+			}
 
-	// Lấy tất cả các phần tử có lớp "inactive-issue"
-	const issueItems = document.querySelectorAll(".inactive-issue");
-
-	// Khởi tạo mảng để lưu trữ các vấn đề được chọn
-	let selectedIssues = [];
-
-	// Lặp qua mỗi phần tử con và thêm sự kiện click
-	issueItems.forEach((item) => {
-		item.addEventListener("click", () => {
-			const isActive = item.classList.contains("active-cate");
-			if (!isActive) {
-				// Thêm lớp "active-cate" khi được chọn
-				item.classList.add("active-cate");
-				// Thêm dữ liệu đã chọn vào mảng
-				selectedIssues.push(item.innerText);
-			} else {
-				// Xóa lớp "active-cate" khi bỏ chọn
-				item.classList.remove("active-cate");
-				// Xóa dữ liệu đã chọn khỏi mảng
-				const index = selectedIssues.indexOf(item.innerText);
-				if (index !== -1) {
-					selectedIssues.splice(index, 1);
+			.justify-center {
+				justify-content: space-between;
+				align-items: center;
+			}
+			.font-bold {
+				font-weight: bold;
+			}
+			@media screen and (max-width: 767px) {
+				.template .container .busline-image {
+					width: 100%;
+					margin-top: 0px;
 				}
 			}
-			console.log("Selected Issues:", selectedIssues);
-		});
-	});
+			#admin_core {
+				display: flex;
+				justify-content: center;
+			}
+			.template {
+				max-width: 600px;
+			}
+			.rate-text {
+				text-align: center;
+				font-size: 20px;
+				font-weight: bold;
+				padding-bottom: 1rem;
+			}
+			.ant-rate {
+				list-style: none;
+				padding-left: 0;
+				display: flex;
+				justify-content: space-evenly;
+			}
 
-	// Event listener for submit button
-	const submitButton = document.querySelector(".submit-btn");
-	submitButton.addEventListener("click", onSubmitReview);
+			.submit-button {
+				padding: 20px 0;
+				display: flex;
+				justify-content: center;
+			}
+			.submit-button button {
+				border: none;
+				padding: 10px 24px;
+				background-color: #3a4b7d;
+				color: #fff;
+				border-radius: 20px;
+			}
+			.issue-container {
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+			/* Thay đổi màu nền và màu chữ khi danh mục được chọn */
+			.active-cate {
+				background-color: #2e8cf7;
+				color: white;
+			}
 
-	// Function to handle form submission
-	function onSubmitReview(event) {
-		event.preventDefault();
+			/* Hiển thị border khi hover vào danh mục */
+			.inactive-issue:hover {
+				border: 1px solid #2e8cf7;
+				cursor: pointer;
+			}
 
-		const name = document
-			.querySelector("input[placeholder='Nhập họ và tên']")
-			.value.trim();
-		const phone = document
-			.querySelector("input[placeholder='Nhập số điện thoại']")
-			.value.trim();
-		const review = document
-			.querySelector("textarea[placeholder='Nhập nội dung đánh giá']")
-			.value.trim();
-		const starsCount = document.querySelectorAll(
-			".ant-rate-star.active"
-		).length;
+			/* Padding và margin cho các danh mục */
+			.inactive-issue {
+				padding: 5px 10px;
+				margin: 5px;
+				border: 1px solid transparent;
+				border-radius: 5px;
+			}
+			.info-text {
+				padding: 20px 0;
+			}
+			.ant-rate-star-first {
+				display: none;
+			}
+			.ant-rate-star .ant-rate-star-zero {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="admin_core">
+			<div class="template">
+				<div class="container-img">
+					<img src="./img/Cover web.jpg" width="100%" alt="" />
+				</div>
+				<div class="container">
+					<div class="d-flex justify-content-between py-3">
+						<div>
+							<img
+								height="100px"
+								src="./img//logo-amz.png"
+								alt=""
+								class="busline-image" />
+						</div>
+						<div>
+							<img
+								src="./img/logo-tqd.png"
+								alt=""
+								class="busline-image"
+								height="100px" />
+						</div>
+					</div>
+					<div class="heading-2">
+						<div class="margin-bottom-cus text-center py-3">
+							<span class="font-bold">Amazing Tân Quang Dũng</span> chân thành
+							cảm ơn Quý Khách đã sử dụng dịch vụ của
+							<span class="font-bold">Amazing Tân Quang Dũng</span> trên hành
+							trình<b> Sài Gòn - Đà Lạt</b> và
+							<b> Ngược lại</b>
+						</div>
+						<div class="margin-cus text-center pb-3">
+							Chúng tôi rất mong nhận được ý kiến đánh giá từ Quý Khách để cải
+							thiện và nâng cao chất lượng dịch vụ.
+						</div>
+					</div>
+					<form class="ant-form ant-form-vertical support_image">
+						<div class="rate-container">
+							<div class="rate-text">Đánh giá dịch vụ</div>
+							<div class="ant-form-item ant-form-item-with-help">
+								<div class="ant-row ant-form-item-row">
+									<div class="ant-col ant-form-item-control">
+										<div class="ant-form-item-control-input">
+											<div class="ant-form-item-control-input-content">
+												<ul
+													class="ant-rate undefined"
+													tabindex="0"
+													role="radiogroup">
+													<li class="ant-rate-star ant-rate-star-zero">
+														<div
+															role="radio"
+															aria-checked="false"
+															aria-posinset="1"
+															aria-setsize="5"
+															tabindex="0">
+															<div class="ant-rate-star-first">
+																<span><img width="60px" class="star" /></span>
+															</div>
+															<div class="ant-rate-star-second">
+																<span><img width="60px" class="star" /></span>
+															</div>
+														</div>
+													</li>
+													<li class="ant-rate-star ant-rate-star-zero">
+														<div
+															role="radio"
+															aria-checked="false"
+															aria-posinset="2"
+															aria-setsize="5"
+															tabindex="0">
+															<div class="ant-rate-star-first">
+																<span><img width="60px" class="star" /></span>
+															</div>
+															<div class="ant-rate-star-second">
+																<span><img width="60px" class="star" /></span>
+															</div>
+														</div>
+													</li>
+													<li class="ant-rate-star ant-rate-star-zero">
+														<div
+															role="radio"
+															aria-checked="false"
+															aria-posinset="3"
+															aria-setsize="5"
+															tabindex="0">
+															<div class="ant-rate-star-first">
+																<span><img width="60px" class="star" /></span>
+															</div>
+															<div class="ant-rate-star-second">
+																<span><img width="60px" class="star" /></span>
+															</div>
+														</div>
+													</li>
+													<li class="ant-rate-star ant-rate-star-zero">
+														<div
+															role="radio"
+															aria-checked="false"
+															aria-posinset="4"
+															aria-setsize="5"
+															tabindex="0">
+															<div class="ant-rate-star-first">
+																<span><img width="60px" class="star" /></span>
+															</div>
+															<div class="ant-rate-star-second">
+																<span><img width="60px" class="star" /></span>
+															</div>
+														</div>
+													</li>
+													<li class="ant-rate-star ant-rate-star-zero">
+														<div
+															role="radio"
+															aria-checked="false"
+															aria-posinset="5"
+															aria-setsize="5"
+															tabindex="0">
+															<div class="ant-rate-star-first">
+																<span><img width="60px" class="star" /></span>
+															</div>
+															<div class="ant-rate-star-second">
+																<span><img width="60px" class="star" /></span>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div style="display: flex; flex-wrap: nowrap">
+											<div
+												class="ant-form-item-explain ant-form-item-explain-connected"
+												role="alert">
+												<div class="" style="">
+													<span
+														class="ant-typography"
+														style="color: rgb(255, 77, 79)"></span>
+												</div>
+											</div>
+											<div style="width: 0px; height: 24px"></div>
+										</div>
+									</div>
+								</div>
+								<div
+									class="ant-form-item-margin-offset"
+									style="margin-bottom: -24px"></div>
+							</div>
+						</div>
+						<div class="sussess">
+							<div class="line"></div>
+							<div class="info-text text-center font-bold">
+								Quý khách cảm thấy hài lòng!
+							</div>
+							<div class="issue-container">
+								<span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Chất lượng xe</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Nhà chờ</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Quầy vé</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Tài xế</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Tiếp viên</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Tổng đài</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Trạm dừng</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Trung chuyển</span
+								>
+							</div>
+							<div class="error-issue"></div>
+						</div>
+						<div class="bad">
+							<div class="line"></div>
+							<div class="info-text text-center font-bold">
+								Quý khách mong muốn cải thiện điều gì?
+							</div>
+							<div class="issue-container">
+								<span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Chất lượng xe</span
+								><span
+									class="inactive-issue active"
+									style="background: rgb(241, 241, 241); color: black"
+									>Nhà chờ</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Quầy vé</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Tài xế</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Tiếp viên</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Tổng đài</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Trạm dừng</span
+								><span
+									class="inactive-issue"
+									style="background: rgb(241, 241, 241); color: black"
+									>Trung chuyển</span
+								>
+							</div>
+							<div class="error-issue"></div>
+						</div>
+						<div class="ant-form-item ant-form-item-with-help">
+							<div class="ant-row ant-form-item-row">
+								<div class="ant-col ant-form-item-control">
+									<div class="ant-form-item-control-input">
+										<div class="ant-form-item-control-input-content">
+											<div class="input-info">
+												<input type="text" placeholder="Nhập họ và tên" />
+											</div>
+											<br />
+											<div class="input-info">
+												<input type="text" placeholder="Nhập số điện thoại" />
+											</div>
+											<br />
+											<div class="float-label">
+												<span
+													class="ant-input-affix-wrapper ant-input-affix-wrapper-textarea-with-clear-btn">
+													<textarea
+														rows="4"
+														placeholder="Nhập nội dung đánh giá"
+														class="ant-input undefined"></textarea>
+													<span
+														role="button"
+														aria-label="close-circle"
+														tabindex="-1"
+														class="anticon anticon-close-circle ant-input-clear-icon-hidden ant-input-clear-icon"></span
+												></span>
+											</div>
+										</div>
+									</div>
+									<div style="display: flex; flex-wrap: nowrap">
+										<div
+											class="ant-form-item-explain ant-form-item-explain-connected"
+											role="alert">
+											<div class="" style="">
+												<span
+													class="ant-typography"
+													style="color: rgb(255, 77, 79); font-size: 10px"
+													><i></i
+												></span>
+											</div>
+										</div>
+										<div style="width: 0px; height: 24px"></div>
+									</div>
+								</div>
+							</div>
+							<div
+								class="ant-form-item-margin-offset"
+								style="margin-bottom: -24px"></div>
+						</div>
+						<div class="submit-button">
+							<button
+								type="submit"
+								class="ant-btn ant-btn-round ant-btn-default submit-btn">
+								<span>Gửi đánh giá</span>
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="container-img">
+					<img src="./img/Web Phone.png" width="100%" alt="" />
+				</div>
+			</div>
+		</div>
 
-		const url =
-			"https://script.google.com/macros/s/AKfycby0kepXtnogwnS6P3MS6REbM-RyV2l7dvH8aiOvFbf8d3Sw9bgNmQEZGer7JwtHZb_f/exec";
-		const formData = new FormData();
-		formData.append("name", name);
-		formData.append("phone", phone);
-		formData.append("review", review);
-		formData.append("stars", starsCount);
-		formData.append("issues", selectedIssues.join(","));
+		<script>
+			// Đường dẫn tới hình ảnh ngôi sao mặc định và ngôi sao đã chọn
+			const starDefault =
+				"https://crm.futabus.vn/static/images/star_default.c2ef332a.svg";
+			const starChecked =
+				"https://crm.futabus.vn/static/images/star.ddec0040.svg";
 
-		// Gửi dữ liệu lên máy chủ
-		fetch(url, {
-			method: "POST",
-			body: formData,
-		}).then(() => {
-			// Reset form
-			document.querySelector("form").reset();
-			// Xóa các lớp active
-			stars.forEach((star) => star.classList.remove("active"));
-			issueItems.forEach((item) => item.classList.remove("active-cate"));
-			// Xóa mảng selectedIssues
-			selectedIssues = [];
-			// Vô hiệu hóa nút gửi sau khi gửi
-			submitButton.setAttribute("disabled", "");
-		});
-		// Chuyển hướng sau 1 giây
-		setTimeout(() => {
-			window.location.href = "https://www.amazinglimousine.vn/cam-on-danh-gia/";
-		}, 500);
-	}
+			// Lấy tất cả các ngôi sao đánh giá
+			const stars = document.querySelectorAll(".ant-rate-star");
 
-	// Cập nhật hình ảnh ngôi sao ban đầu
-	const divStar = document.querySelectorAll(".ant-rate-star-second span img");
-	const divStarchecked = document.querySelectorAll(
-		".ant-rate-star-first span img"
-	);
-	// Lặp qua các phần tử img trong divStar và gán src cho mỗi phần tử
-	divStar.forEach((img) => {
-		img.src = starDefault;
-	});
+			// Lặp qua từng ngôi sao và thêm sự kiện click
+			stars.forEach((star, index) => {
+				star.addEventListener("click", () => {
+					// Loại bỏ lớp active từ tất cả các ngôi sao có index lớn hơn index của ngôi sao được chọn
+					for (let i = index + 1; i < stars.length; i++) {
+						stars[i].classList.remove("active");
+						stars[i].querySelector(".ant-rate-star-second span img").src =
+							starDefault;
+						stars[i].querySelector(".ant-rate-star-first span img").src =
+							starChecked;
+					}
+					// Thêm lớp active cho ngôi sao được chọn và các ngôi sao trước đó
+					for (let i = 0; i <= index; i++) {
+						stars[i].classList.add("active");
+						stars[i].querySelector(".ant-rate-star-second span img").src =
+							starChecked;
+						stars[i].querySelector(".ant-rate-star-first span img").src =
+							starChecked;
+					}
+					console.log(index + 1);
+					if (index + 1 <= 3) {
+						document.querySelector(".bad").style.display = "block";
+						document.querySelector(".sussess").style.display = "none";
+					} else {
+						document.querySelector(".sussess").style.display = "block";
+						document.querySelector(".bad").style.display = "none";
+					}
+				});
+			});
 
-	// Lặp qua các phần tử img trong divStarchecked và gán src cho mỗi phần tử
-	divStarchecked.forEach((img) => {
-		img.src = starChecked;
-	});
-</script>
+			// Lấy tất cả các phần tử có lớp "inactive-issue"
+			const issueItems = document.querySelectorAll(".inactive-issue");
+
+			// Khởi tạo mảng để lưu trữ các vấn đề được chọn
+			let selectedIssues = [];
+
+			// Lặp qua mỗi phần tử con và thêm sự kiện click
+			issueItems.forEach((item) => {
+				item.addEventListener("click", () => {
+					const isActive = item.classList.contains("active-cate");
+					if (!isActive) {
+						// Thêm lớp "active-cate" khi được chọn
+						item.classList.add("active-cate");
+						// Thêm dữ liệu đã chọn vào mảng
+						selectedIssues.push(item.innerText);
+					} else {
+						// Xóa lớp "active-cate" khi bỏ chọn
+						item.classList.remove("active-cate");
+						// Xóa dữ liệu đã chọn khỏi mảng
+						const index = selectedIssues.indexOf(item.innerText);
+						if (index !== -1) {
+							selectedIssues.splice(index, 1);
+						}
+					}
+					console.log("Selected Issues:", selectedIssues);
+				});
+			});
+
+			// Event listener for submit button
+			const submitButton = document.querySelector(".submit-btn");
+			submitButton.addEventListener("click", onSubmitReview);
+
+			// Function to handle form submission
+			function onSubmitReview(event) {
+				event.preventDefault();
+
+				const name = document
+					.querySelector("input[placeholder='Nhập họ và tên']")
+					.value.trim();
+				const phone = document
+					.querySelector("input[placeholder='Nhập số điện thoại']")
+					.value.trim();
+				const review = document
+					.querySelector("textarea[placeholder='Nhập nội dung đánh giá']")
+					.value.trim();
+				const starsCount = document.querySelectorAll(
+					".ant-rate-star.active"
+				).length;
+
+				const url =
+					"https://script.google.com/macros/s/AKfycby0kepXtnogwnS6P3MS6REbM-RyV2l7dvH8aiOvFbf8d3Sw9bgNmQEZGer7JwtHZb_f/exec";
+				const formData = new FormData();
+				formData.append("name", name);
+				formData.append("phone", phone);
+				formData.append("review", review);
+				formData.append("stars", starsCount);
+				formData.append("issues", selectedIssues.join(","));
+
+				// Gửi dữ liệu lên máy chủ
+				fetch(url, {
+					method: "POST",
+					body: formData,
+				}).then(() => {
+					// Reset form
+					document.querySelector("form").reset();
+					// Xóa các lớp active
+					stars.forEach((star) => star.classList.remove("active"));
+					issueItems.forEach((item) => item.classList.remove("active-cate"));
+					// Xóa mảng selectedIssues
+					selectedIssues = [];
+					// Vô hiệu hóa nút gửi sau khi gửi
+					submitButton.setAttribute("disabled", "");
+				});
+				// Chuyển hướng sau 1 giây
+				setTimeout(() => {
+					window.location.href =
+						"https://www.amazinglimousine.vn/cam-on-danh-gia/";
+				}, 500);
+			}
+
+			// Cập nhật hình ảnh ngôi sao ban đầu
+			const divStar = document.querySelectorAll(
+				".ant-rate-star-second span img"
+			);
+			const divStarchecked = document.querySelectorAll(
+				".ant-rate-star-first span img"
+			);
+			// Lặp qua các phần tử img trong divStar và gán src cho mỗi phần tử
+			divStar.forEach((img) => {
+				img.src = starDefault;
+			});
+
+			// Lặp qua các phần tử img trong divStarchecked và gán src cho mỗi phần tử
+			divStarchecked.forEach((img) => {
+				img.src = starChecked;
+			});
+		</script>
+	</body>
+</html>
