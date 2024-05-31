@@ -62,12 +62,7 @@
 			.font-bold {
 				font-weight: bold;
 			}
-			@media screen and (max-width: 767px) {
-				.template .container .busline-image {
-					width: 100%;
-					margin-top: 0px;
-				}
-			}
+
 			#admin_core {
 				display: flex;
 				justify-content: center;
@@ -133,32 +128,37 @@
 			.ant-rate-star .ant-rate-star-zero {
 				cursor: pointer;
 			}
+			.logo-section {
+				max-width: 10px;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="admin_core">
 			<div class="template">
-				<div class="container-img">
+				<div class="container-img d-flex">
 					<img src="./img/Cover web.jpg" width="100%" alt="" />
 				</div>
-				<div class="container py-2">
-					<div class="d-flex justify-content-between logo">
-						<div>
+
+				<div class="container py-3">
+					<div class="row">
+						<div class="col-5">
 							<img
+								src="./img/logo-amz.png"
 								height="100px"
-								src="./img//logo-amz.png"
 								alt=""
-								class="busline-image" />
+								width="100%" />
 						</div>
-						<div>
+						<div class="col-7">
 							<img
 								src="./img/logo-tqd.png"
+								height="100px"
 								alt=""
-								class="busline-image"
-								height="100px" />
+								width="100%" />
 						</div>
 					</div>
 				</div>
+
 				<div class="container">
 					<div class="heading-2">
 						<div class="margin-bottom-cus text-center py-3">
